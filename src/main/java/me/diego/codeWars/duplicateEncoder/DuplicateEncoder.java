@@ -16,7 +16,6 @@ public class DuplicateEncoder {
             integers.add(i);
             position.put(lowerCase.charAt(i), integers);
         }
-        System.out.println(position);
 
         StringBuffer sb = new StringBuffer(lowerCase);
         position.forEach((character, list) -> {
