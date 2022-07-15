@@ -8,14 +8,15 @@ public class DuplicateEncoder {
 
         Map<Character, List<Integer>> position = new HashMap<>();
         for (int i = 0; i < lowerCase.split("").length; i++) {
-            List<Integer> integers = position.get(word.charAt(i));
+            List<Integer> integers = position.get(lowerCase.charAt(i));
             if (integers == null) {
                 integers = new ArrayList<>();
             }
-            integers.add(i);
 
+            integers.add(i);
             position.put(lowerCase.charAt(i), integers);
         }
+        System.out.println(position);
 
         StringBuffer sb = new StringBuffer(lowerCase);
         position.forEach((character, list) -> {
